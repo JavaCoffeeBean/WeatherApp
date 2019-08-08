@@ -21,7 +21,7 @@
 
 
         <TextView
-            android:id="@+id/textView5"
+            android:id="@+id/temperature"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:gravity="center"
@@ -30,13 +30,13 @@
             android:textSize="100sp" />
 
         <ImageView
-            android:id="@+id/imageView"
+            android:id="@+id/weatherIcon"
             android:layout_width="150dp"
             android:layout_height="150dp"
             app:srcCompat="@drawable/cloudy" />
 
         <TextView
-            android:id="@+id/textView7"
+            android:id="@+id/city"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:gravity="center"
@@ -65,7 +65,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <EditText
-        android:id="@+id/editText2"
+        android:id="@+id/inputCity"
         android:layout_width="250dp"
         android:layout_height="60dp"
         android:layout_marginStart="35dp"
@@ -77,18 +77,19 @@
         app:layout_constraintStart_toStartOf="parent" />
 
     <ImageButton
-        android:id="@+id/imageButton7"
+        android:id="@+id/search"
         android:layout_width="50dp"
         android:layout_height="50dp"
         android:layout_marginStart="25dp"
         android:layout_marginTop="575dp"
         android:layout_marginEnd="48dp"
+        android:onClick="findCity"
         android:layout_marginBottom="112dp"
         android:background="@null"
         android:scaleType="centerCrop"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/editText2"
+        app:layout_constraintStart_toEndOf="@+id/inputCity"
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/search" />
 
