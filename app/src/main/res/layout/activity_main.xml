@@ -40,7 +40,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:gravity="center"
-            android:text="Houston,Tx"
+            android:text="Austin,Tx"
             android:textColor="#FDFDFE"
             android:textSize="24sp"
             app:layout_constraintEnd_toEndOf="parent"
