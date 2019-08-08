@@ -15,7 +15,7 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
     }
-    public void findCity(View view){
+    public void searchCity(View view){
         EditText editText = findViewById(R.id.inputCity);
         editText.setText("");
     }
