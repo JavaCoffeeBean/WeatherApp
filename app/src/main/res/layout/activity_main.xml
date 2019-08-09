@@ -40,7 +40,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:gravity="center"
-            android:text="Stafford,Tx"
+            android:text="@string/city_state"
             android:textColor="#FDFDFE"
             android:textSize="24sp"
             app:layout_constraintEnd_toEndOf="parent"
