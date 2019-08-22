@@ -25,7 +25,6 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:gravity="center"
-            android:text="@string/Temperature_Data"
             android:textColor="#FFFFFF"
             android:textSize="100sp" />
 
@@ -78,13 +77,13 @@
         app:layout_constraintStart_toStartOf="parent" />
 
     <ImageButton
+        android:contentDescription="button for zip code search"
         android:id="@+id/search"
         android:layout_width="50dp"
         android:layout_height="50dp"
         android:layout_marginStart="25dp"
         android:layout_marginTop="575dp"
         android:layout_marginEnd="48dp"
-        android:onClick="searchCity"
         android:layout_marginBottom="112dp"
         android:background="@null"
         android:scaleType="centerCrop"
@@ -93,5 +92,17 @@
         app:layout_constraintStart_toEndOf="@+id/inputCity"
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/search" />
+
+    <Button
+        android:id="@+id/engage"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginBottom="8dp"
+        android:text="Button"
+        app:layout_constraintBottom_toTopOf="@+id/search"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/inputCity" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
