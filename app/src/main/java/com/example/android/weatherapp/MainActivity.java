@@ -44,7 +44,7 @@ public class MainActivity extends AppCompatActivity {
     private void jsonParse(){
 
 
-        String url = "http://api.openweathermap.org/data/2.5/weather?zip=77063,us&APPID=79143c2f91de098f1ab2ca576814fc8d";
+        String url = "http://api.openweathermap.org/data/2.5/weather?zip=77099,us&APPID=79143c2f91de098f1ab2ca576814fc8d";
 
 
         JsonObjectRequest request = new JsonObjectRequest(Request.Method.GET, url, null,
