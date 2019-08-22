@@ -1,7 +1,7 @@
 <resources>
     <string name="app_name">WeatherApp</string>
     <string name="Location_Data">location</string>
-    <string name="Temperature_Data">50</string>
+    <string name="Temperature_Data">40</string>
     <string name="Temperature_Mearurement">ºF</string>
     <string name="hint_text">Enter Zip Code</string>
 </resources>
