@@ -2,11 +2,16 @@ package com.example.android.weatherapp;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.graphics.Bitmap;
+import android.graphics.drawable.BitmapDrawable;
+import android.graphics.drawable.Drawable;
+import android.media.Image;
 import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.android.volley.Request;
@@ -18,31 +23,23 @@ import com.android.volley.toolbox.Volley;
 
 import org.json.JSONException;
 import org.json.JSONObject;
+import org.json.JSONStringer;
 
 public class MainActivity extends AppCompatActivity {
     private TextView weatherTemp;
+    private ImageView icon;
     private RequestQueue mQueue;
+    private TextView location;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        location = findViewById(R.id.city);
 
         weatherTemp = findViewById(R.id.temperature);
-        Button buttonParse = findViewById(R.id.engage);
-
+        icon = findViewById(R.id.weatherIcon);
         mQueue = Volley.newRequestQueue(this);
-
-        buttonParse.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                jsonParse();
-            }
-        });
-    }
-
-    private void jsonParse(){
-
 
         String url = "http://api.openweathermap.org/data/2.5/weather?zip=77099,us&APPID=79143c2f91de098f1ab2ca576814fc8d";
 
@@ -53,26 +50,25 @@ public class MainActivity extends AppCompatActivity {
                     public void onResponse(JSONObject response) {
                         try {
                             JSONObject jsonObject = response.getJSONObject("main");
+                            JSONObject location_city = response.getJSONObject("name");
 
-                            for (int i = 0; i < jsonObject.length(); i++) {
-//                                JSONObject main_Array = jsonObject.getJSONObject();
+                                String place = location_city.getString("name");
 
                                 int temp = jsonObject.getInt("temp");
                                 int temp_min = jsonObject.getInt("temp_min");
                                 int temp_max = jsonObject.getInt("temp_max");
 
-                                double tempF = (temp - 273.15) * 9/5 + 32;
-                                double temp_minF = (temp_min - 273.15) * 9/5 + 32;
-                                double temp_maxF = (temp_max - 273.15) * 9/5 + 32;
+                                double tempF = (temp - 273.15) * 9 / 5 + 32;
+                                double temp_minF = (temp_min - 273.15) * 9 / 5 + 32;
+                                double temp_maxF = (temp_max - 273.15) * 9 / 5 + 32;
 
                                 int tempF2 = (int) tempF;
                                 int temp_minF2 = (int) temp_minF;
                                 int temp_maxF2 = (int) temp_maxF;
 
 
-
                                 weatherTemp.append(String.valueOf(tempF2));
-                            }
+                                location.append(place);
 
                         } catch (JSONException e) {
                             e.printStackTrace();
@@ -85,6 +81,8 @@ public class MainActivity extends AppCompatActivity {
             }
         });
         mQueue.add(request);
-    }
+
+
+}
 
 }
