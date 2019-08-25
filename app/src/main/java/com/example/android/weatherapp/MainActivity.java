@@ -11,6 +11,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -30,16 +31,18 @@ public class MainActivity extends AppCompatActivity {
     private ImageView icon;
     private RequestQueue mQueue;
     private TextView location;
+    /*private EditText search;*/
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         location = findViewById(R.id.city);
-
+        /*search = findViewById(R.id.inputCity);*/
         weatherTemp = findViewById(R.id.temperature);
         icon = findViewById(R.id.weatherIcon);
         mQueue = Volley.newRequestQueue(this);
+
 
         int zip_code = 77099;
 
@@ -57,21 +60,21 @@ public class MainActivity extends AppCompatActivity {
                             String place = response.getString("name");
 
 
-                                int temp = jsonObject.getInt("temp");
-                                int temp_min = jsonObject.getInt("temp_min");
-                                int temp_max = jsonObject.getInt("temp_max");
+                            int temp = jsonObject.getInt("temp");
+                            int temp_min = jsonObject.getInt("temp_min");
+                            int temp_max = jsonObject.getInt("temp_max");
 
-                                double tempF = (temp - 273.15) * 9 / 5 + 32;
-                                double temp_minF = (temp_min - 273.15) * 9 / 5 + 32;
-                                double temp_maxF = (temp_max - 273.15) * 9 / 5 + 32;
+                            double tempF = (temp - 273.15) * 9 / 5 + 32;
+                            double temp_minF = (temp_min - 273.15) * 9 / 5 + 32;
+                            double temp_maxF = (temp_max - 273.15) * 9 / 5 + 32;
 
-                                int tempF2 = (int) tempF;
-                                int temp_minF2 = (int) temp_minF;
-                                int temp_maxF2 = (int) temp_maxF;
+                            int tempF2 = (int) tempF;
+                            int temp_minF2 = (int) temp_minF;
+                            int temp_maxF2 = (int) temp_maxF;
 
 
-                                weatherTemp.append(String.valueOf(tempF2));
-                                location.append(place);
+                            weatherTemp.append(String.valueOf(tempF2));
+                            location.append(place);
 
                         } catch (JSONException e) {
                             e.printStackTrace();
@@ -86,6 +89,8 @@ public class MainActivity extends AppCompatActivity {
         mQueue.add(request);
 
 
-}
+
+    }
+
 
 }

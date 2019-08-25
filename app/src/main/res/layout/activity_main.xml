@@ -86,6 +86,7 @@
         android:layout_marginTop="575dp"
         android:layout_marginEnd="48dp"
         android:layout_marginBottom="112dp"
+        android:onClick="find"
         android:background="@null"
         android:scaleType="centerCrop"
         app:layout_constraintBottom_toBottomOf="parent"
