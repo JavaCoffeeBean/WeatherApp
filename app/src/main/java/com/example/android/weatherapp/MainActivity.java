@@ -41,7 +41,9 @@ public class MainActivity extends AppCompatActivity {
         icon = findViewById(R.id.weatherIcon);
         mQueue = Volley.newRequestQueue(this);
 
-        String url = "http://api.openweathermap.org/data/2.5/weather?zip=77099,us&APPID=79143c2f91de098f1ab2ca576814fc8d";
+        int zip_code = 77099;
+
+        String url = "http://api.openweathermap.org/data/2.5/weather?zip=" + zip_code + ",us&APPID=79143c2f91de098f1ab2ca576814fc8d";
 
 
         JsonObjectRequest request = new JsonObjectRequest(Request.Method.GET, url, null,
@@ -50,9 +52,10 @@ public class MainActivity extends AppCompatActivity {
                     public void onResponse(JSONObject response) {
                         try {
                             JSONObject jsonObject = response.getJSONObject("main");
-                            JSONObject location_city = response.getJSONObject("name");
 
-                                String place = location_city.getString("name");
+
+                            String place = response.getString("name");
+
 
                                 int temp = jsonObject.getInt("temp");
                                 int temp_min = jsonObject.getInt("temp_min");

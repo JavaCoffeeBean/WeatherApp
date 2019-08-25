@@ -24,6 +24,7 @@
             android:id="@+id/temperature"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:text=""
             android:gravity="center"
             android:textColor="#FFFFFF"
             android:textSize="100sp" />
@@ -40,7 +41,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:gravity="center"
-            android:text="@string/Location_Data"
+            android:text=""
             android:textColor="#FDFDFE"
             android:textSize="24sp"
             app:layout_constraintEnd_toEndOf="parent"
