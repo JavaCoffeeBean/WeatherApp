@@ -31,6 +31,7 @@ public class MainActivity extends AppCompatActivity {
     private ImageView icon;
     private RequestQueue mQueue;
     private TextView location;
+    private int zip_code = 77099;
     /*private EditText search;*/
 
     @Override
@@ -44,7 +45,6 @@ public class MainActivity extends AppCompatActivity {
         mQueue = Volley.newRequestQueue(this);
 
 
-        int zip_code = 77099;
 
         String url = "http://api.openweathermap.org/data/2.5/weather?zip=" + zip_code + ",us&APPID=79143c2f91de098f1ab2ca576814fc8d";
 
@@ -91,6 +91,10 @@ public class MainActivity extends AppCompatActivity {
 
 
     }
+
+        public void search(View view) {
+
+        }
 
 
 }
