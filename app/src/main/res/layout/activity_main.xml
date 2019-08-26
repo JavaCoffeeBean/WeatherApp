@@ -79,7 +79,7 @@
 
     <ImageButton
         android:contentDescription="button for zip code search"
-        android:id="@+id/search"
+        android:id="@+id/finder"
         android:layout_width="50dp"
         android:layout_height="50dp"
         android:layout_marginStart="25dp"

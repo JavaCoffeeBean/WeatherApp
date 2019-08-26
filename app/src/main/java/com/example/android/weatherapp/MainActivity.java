@@ -31,7 +31,8 @@ public class MainActivity extends AppCompatActivity {
     private ImageView icon;
     private RequestQueue mQueue;
     private TextView location;
-    private int zip_code = 77099;
+     String zip_code = "77099";
+     EditText search;
     /*private EditText search;*/
 
     @Override
@@ -39,10 +40,12 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         location = findViewById(R.id.city);
-        /*search = findViewById(R.id.inputCity);*/
+        search = findViewById(R.id.inputCity);
         weatherTemp = findViewById(R.id.temperature);
         icon = findViewById(R.id.weatherIcon);
         mQueue = Volley.newRequestQueue(this);
+
+
 
 
 
@@ -90,11 +93,19 @@ public class MainActivity extends AppCompatActivity {
 
 
 
+
     }
 
-        public void search(View view) {
+        public void find(View view) {
+
+            zip_code = search.getText().toString();
+            search.setText("");
+
+
 
         }
+
+
 
 
 }
