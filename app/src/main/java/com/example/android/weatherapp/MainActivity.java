@@ -43,8 +43,8 @@ public class MainActivity extends AppCompatActivity {
 
 
 
-    public void onResume() {
-        super.onResume();
+    public void onStart() {
+        super.onStart();
 
         setContentView(R.layout.activity_main);
         location = findViewById(R.id.city);
@@ -52,8 +52,6 @@ public class MainActivity extends AppCompatActivity {
         weatherTemp = findViewById(R.id.temperature);
         icon = findViewById(R.id.weatherIcon);
         mQueue = Volley.newRequestQueue(this);
-
-
 
 
 
@@ -101,20 +99,13 @@ public class MainActivity extends AppCompatActivity {
 
 }
 
-
-
-
-
         public void find(View view) {
 
             zip_code = search.getText().toString();
             search.setText("");
 
-
+            onStart();
 
         }
-
-
-
 
 }
