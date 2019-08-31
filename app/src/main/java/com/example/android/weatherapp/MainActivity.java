@@ -31,7 +31,7 @@ public class MainActivity extends AppCompatActivity {
     private ImageView icon;
     private RequestQueue mQueue;
     private TextView location;
-     String zip_code = "77099";
+     String zip_code = "78702";
      EditText search;
     /*private EditText search;*/
 
