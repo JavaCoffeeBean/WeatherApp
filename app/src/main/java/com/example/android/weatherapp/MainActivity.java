@@ -38,6 +38,14 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
+    }
+
+
+
+    public void onResume() {
+        super.onResume();
+
         setContentView(R.layout.activity_main);
         location = findViewById(R.id.city);
         search = findViewById(R.id.inputCity);
@@ -91,10 +99,11 @@ public class MainActivity extends AppCompatActivity {
         });
         mQueue.add(request);
 
+}
 
 
 
-    }
+
 
         public void find(View view) {
 
