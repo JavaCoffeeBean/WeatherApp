@@ -72,7 +72,7 @@ public class ScanActivity extends AppCompatActivity implements ZXingScannerView.
         startActivity(intent);
 
 
-        /*scannerView.startCamera();*/
+        scannerView.startCamera();
 
 
 

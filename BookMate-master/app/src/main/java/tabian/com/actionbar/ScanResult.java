@@ -13,6 +13,7 @@ import com.android.volley.RequestQueue;
 import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.JsonObjectRequest;
+import com.android.volley.toolbox.Volley;
 import com.bumptech.glide.Glide;
 
 import org.json.JSONArray;
@@ -39,11 +40,15 @@ public class ScanResult extends AppCompatActivity {
         book_author = findViewById(R.id.author);
         book_cover = findViewById(R.id.book_Cover);
 
+        mQueue = Volley.newRequestQueue(this);
+
+        jsonParse();
+
 
 
     }
 
-    private void jsonParse() {
+    public void jsonParse() {
 
         String url = "https://www.googleapis.com/books/v1/volumes?q=9780545035170&key=AIzaSyDG6IF6-n0EDhvSfac4OYNqtU520xQUqzQ";
 
