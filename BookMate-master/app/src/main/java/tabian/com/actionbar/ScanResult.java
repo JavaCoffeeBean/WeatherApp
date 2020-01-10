@@ -26,6 +26,7 @@ public class ScanResult extends AppCompatActivity {
 
     private TextView book_title;
     private TextView book_author;
+    private String cover_art;
     private ImageView book_cover;
     private RequestQueue mQueue;
 
@@ -71,7 +72,10 @@ public class ScanResult extends AppCompatActivity {
                             }*/
 
                             book_title.setText(jsonArray.getJSONObject(0).getJSONObject("volumeInfo").getString("title"));
-                            book_author.setText(jsonArray.getJSONObject(0).getJSONObject("volumeInfo").getJSONArray("authors").getJSONObject(0).toString());
+                            book_author.setText(jsonArray.getJSONObject(0).getJSONObject("volumeInfo").getJSONArray("authors").getString(0));
+                            cover_art = jsonArray.getJSONObject(0).getJSONObject("volumeInfo").getJSONObject("imageLinks").getString("thumbnail");
+
+                            Glide.with(book_cover).load(cover_art).into(book_cover);
                         } catch (JSONException e) {
                             e.printStackTrace();
                         }

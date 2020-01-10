@@ -150,7 +150,7 @@ public class MainActivity extends AppCompatActivity implements EasyPermissions.P
         addBook.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                openCamera();
+                openScannerActivity();
             }
         });
 
@@ -163,7 +163,6 @@ public class MainActivity extends AppCompatActivity implements EasyPermissions.P
         String[] perms = {Manifest.permission.CAMERA, Manifest.permission.INTERNET};
         if (EasyPermissions.hasPermissions(this, perms)) {
             Toast.makeText(this, "Opening camera", Toast.LENGTH_SHORT).show();
-            openScannerActivity();
         } else {
             EasyPermissions.requestPermissions(this, "We need permissions because this and that",
                     123, perms);
@@ -203,7 +202,7 @@ public class MainActivity extends AppCompatActivity implements EasyPermissions.P
             public void openScannerActivity(){
 
 
-                Intent intent = new Intent(this, ScanResult.class );
+                Intent intent = new Intent(this, ScanActivity.class );
                 startActivity(intent);
             }
 
